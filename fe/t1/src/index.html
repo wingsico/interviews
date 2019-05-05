@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wrapper {
+      margin: 0 10px;
+      width: 100%;
+    }
+
+    .text {
+      background-color: #000;
+      color: #fff;
+
+      width: 100%;
+
+      position: relative;
+      padding: 25% 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text span {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="text">
+      <span>A</span>
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+
+</html>
