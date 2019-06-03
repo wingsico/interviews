@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    section {
+      height: 200px;
+      padding: 10px 0;
+      margin: 10px 0;
+      position: relative;
+    }
+
+    section::after {
+      display: block;
+      position: absolute;
+      box-sizing: border-box;
+      content: ' ';
+      pointer-events: none;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 0 solid #ccc;
+      transform: scale(0.5);
+      border-bottom-width: 1px;
+    }
+
+    div:not(.test) {
+      width: 100px;
+      height: 100px;
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="s-1">
+    <div class="center-1"></div>
+  </section>
+  <style>
+    .s-1 {
+      position: relative;
+    }
+
+    .center-1 {
+
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  </style>
+
+  <section class="p-2">
+    <div class="center-2"></div>
+  </section>
+  <style>
+    .p-2 {
+      position: relative;
+    }
+
+    .center-2 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+  <section class="p-3">
+    <div class="center-3"></div>
+  </section>
+  <style>
+    .p-3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
+  <section class="p-4">
+    123123
+    <div class="center-4"></div>
+  </section>
+
+  <style>
+    .p-4 {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      width: 200px;
+      font-size: 12px;
+    }
+
+    .center-4 {
+      display: inline-block;
+    }
+  </style>
+
+  <div class="test">
+    <!-- <p class="inner"></p> -->
+  </div>
+
+  <style>
+    .test {
+      width: 300px;
+      height: 300px;
+      background: pink;
+      position: relative;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .test::after {
+      content: ' ';
+
+      position: absolute;
+      top: -50%;
+      bottom: -50%;
+      left: -50%;
+      right: -50%;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
+      margin: 0;
+      transform: scale(.5);
+      border-radius: 20px;
+    }
+  </style>
+</body>
+
+</html>

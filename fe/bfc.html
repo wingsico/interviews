@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="bfc">
+    <p class="float">hahahaha</p>
+    <div>
+      <p>greet阿斯达是大阿萨德阿萨德
+        阿斯达大萨达阿萨德as阿斯达是大
+        阿斯达是大所大</p>
+    </div>
+  </div>
+
+  <style>
+    .bfc {
+      padding: 20px;
+      border: 2px solid #ccc;
+    }
+
+    .float {
+      float: left;
+      /* width: 100px; */
+      height: 50px;
+      border: 1px solid red;
+    }
+
+    .bfc>div {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      width: 60px;
+    }
+  </style>
+</body>
+
+</html>

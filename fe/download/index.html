@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <section>
+    <a href="https://user-gold-cdn.xitu.io/2018/10/25/166ab1b84892d475?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+      download="test.png">download</a>
+  </section>
+  <section>
+    <button id="download">下载</button>
+  </section>
+  <script>
+    (function () {
+
+      function download(url, name, format) {
+        let image = new Image();
+        image.src = url;
+        image.setAttribute("crossOrigin", 'anonymous')
+
+        image.onload = () => {
+          let link = document.createElement('a');
+          link.setAttribute('download', name);
+          link.style.display = 'none';
+
+          let canvas = document.createElement('canvas');
+          let context = canvas.getContext('2d');
+          let w = image.naturalWidth;
+          let h = image.naturalHeight;
+
+          context.drawImage(image, 0, 0);
+
+          link.setAttribute('href', canvas.toDataURL(`image/${format}`));
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+
+      }
+
+      document.querySelector("#download").addEventListener('click', function () {
+        download('http://img.alicdn.com/tfs/TB1_ZnHNXXXXXXBXpXXXXXXXXXX-900-500.jpg', 'test.jpg', 'jpg')
+      })
+
+
+
+
+
+
+    })()
+  </script>
+</body>
+
+</html>

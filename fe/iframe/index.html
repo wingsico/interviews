@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .hidden {
+
+      clip-path: polygon(0 0);
+    }
+
+    .my-index {
+      width: 30%;
+    }
+
+    .rect {
+
+      background-color: #44ceff;
+      display: inline-block;
+      width: 100%;
+      padding: 50% 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="my-index">
+    <p class="hidden">Hello</p>
+    <div class="rect"></div>
+    <iframe class="hidden" src="./test.html" width="300" height="400" id="my-iframe"></iframe>
+  </div>
+
+  <script>
+    (function () {
+      window.onload = function () {
+        const iframe = document.getElementById('my-iframe');
+
+        const childDocument = iframe.contentWindow.document;
+
+        childDocument.querySelector('.my-test').style.color = '#44ceff';
+      }
+    })()
+
+  </script>
+</body>
+
+</html>

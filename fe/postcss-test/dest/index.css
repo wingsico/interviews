@@ -1,0 +1,19 @@
+/* Testing autoprefixer */
+
+.autoprefixer {
+  display: flex;
+  -webkit-animation: cubic-bezier(0.075, 0.82, 0.165, 1) ease infinite;
+          animation: cubic-bezier(0.075, 0.82, 0.165, 1) ease infinite;
+}
+
+/* Testing cssnext */
+
+.cssnext {
+  background: color(red alpha(-10%));
+}
+
+/* Testing precss */
+
+.precss {
+    background: green
+}
